@@ -9,18 +9,22 @@
 </head>
 <body>
     <!-- title, author, the number of pages, and whether or not you have read the book. -->
-    <button id="show-form">Add a Book</button>
-    <form action="" name="book-form" id="book-form">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title">
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author">
-        <label for="pages">Number of Pages:</label>
-        <input type="number" name="pages" id="pages">
-        <label for="read">Read?</label>
-        <input type="checkbox" name="read" id="read">
-        <button id="add-book">Add</button>
-    </form>
+    <div id="show-form-wrapper">
+        <button id="show-form">Add a Book</button>
+    </div>
+    <div id="form-wrapper">
+        <form action="" name="book-form" id="book-form">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Number of Pages:</label>
+            <input type="number" name="pages" id="pages">
+            <label for="read">Read:</label>
+            <input type="checkbox" name="read" id="read">
+            <button id="add-book">Add</button>
+        </form>
+    </div>
     <div id="container"></div>
 </body>
 </html>
