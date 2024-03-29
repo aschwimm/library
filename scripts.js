@@ -17,17 +17,12 @@ showFormButton.addEventListener("click", () => {
 })
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
-    const newBook = new Book();
     if(read.value === "on") {
         read.value = "Yes";
     } else {
         read.value = "No";
     }
-    
-    newBook.Title = title.value;
-    newBook.Author = author.value;
-    newBook.Pages = pages.value;
-    newBook.Read = read.value;
+    const newBook = new Book(title.value, author.value, pages.value, read.value);
     addBookToLibrary(newBook);
     displayBooks();
     addBookForm.reset();
