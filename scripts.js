@@ -6,7 +6,15 @@ const author = document.getElementById("author");
 const pages= document.getElementById("pages");
 const read = document.getElementById("read");
 const container = document.getElementById("container");
-
+const showFormButton = document.getElementById("show-form");
+showFormButton.addEventListener("click", () => {
+    const displayStatus = addBookForm.style.display;
+    if (displayStatus === "block") {
+        addBookForm.style.display = "none";
+    } else {
+        addBookForm.style.display = "block";
+    }
+})
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
     const newBook = new Book();
