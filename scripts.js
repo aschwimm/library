@@ -45,6 +45,26 @@ function displayBooks() {
             entry.innerHTML = `${prop}: ${book[prop]}`;
             bookCard.append(entry);
         }
+        const removeBook = document.createElement("button");
+        removeBook.innerHTML = "Remove";
+        removeBook.addEventListener("click", () => {
+            const index = myLibrary.indexOf(book);
+            myLibrary.splice(index, 1);
+            displayBooks();
+        });
+        const markRead = document.createElement("button");
+        markRead.innerHTML = "Mark Read";
+        markRead.addEventListener("click", () => {
+            const index = myLibrary.indexOf(book);
+            if (myLibrary[index].read === "Yes") {
+                myLibrary[index].read = "No";
+            } else {
+                myLibrary[index].read = "Yes";
+            }
+            displayBooks();
+        })
+        bookCard.append(markRead);
+        bookCard.append(removeBook);
         container.append(bookCard);
     })
 }
