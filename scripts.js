@@ -15,12 +15,14 @@ addButton.addEventListener("click", (event) => {
     } else {
         read.value = "No";
     }
+    
     newBook.title = title.value;
     newBook.author = author.value;
     newBook.pages = pages.value;
     newBook.read = read.value;
     addBookToLibrary(newBook);
-    console.log(newBook);
+    displayBooks();
+    addBookForm.reset();
     console.log(myLibrary);
 });
 
@@ -33,11 +35,16 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
-    const bookCard = document.createElement("div");
-    for(const prop in book) {  
-        const entry = document.createElement("div");
-        entry.innerHTML = `${prop}: ${book[prop]}`;
-        bookCard.append(entry);
-    }
-    container.append(bookCard);
+}
+function displayBooks() {
+    container.innerHTML = "";
+    myLibrary.forEach((book) => {
+        const bookCard = document.createElement("div");
+        for(const prop in book) {
+            const entry = document.createElement("div");
+            entry.innerHTML = `${prop}: ${book[prop]}`;
+            bookCard.append(entry);
+        }
+        container.append(bookCard);
+    })
 }
